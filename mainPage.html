@@ -49,33 +49,45 @@
     </style>
 </head>
 <body>
-    <h1 class="loginBoxTitle" style="text-align: center;">유럽 지도요</h1>
-    <!--  html 전체 영역을 지정하는 container -->
+  <h1 id ="userNameTitle" style="text-align: center;"></h1>
 
-      
-      <!--  login 폼 영역을 : loginBox -->
-      <!-- <div id="ImageBox"> -->
-        <!-- <area shape="rect" coords="0,0,500,500" alt="영국" onmouseover="showDropdown(event, 'dropdown-container1')" onmouseout="hideDropdown('dropdown-container1')"> -->
-        
-      <!-- </div> -->
-      <div class = container>
-        <img src="www.jpg" alt="please" usemap="#workmap">
-        <map name="workmap">
-            <area shape="circle" coords="337,300,44" alt="England" href="./england.html" onmouseover="showDropdown(event, 'dropdown-container1')" onmouseout="hideDropdown('dropdown-container1')">
-            <area shape="circle" coords="337,450,44" alt="Paris" href="./paris.html">
-            <area shape="circle" coords="650,170,44" alt="Finland" href="./finland.html">
-            <area shape="circle" coords="450,360,44" alt="Germany" href="./germany.html">
-            <area shape="circle" coords="455,500,44" alt="Italy" href="./Italy.html">
+  <script>
+    // URL에서 쿼리 매개변수를 가져오는 함수
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
 
-        </map>
-        <div id="dropdown-container1" style="display: none;">
-          <img src="england_flag.jpg" alt="ENG" height="100%" width="100%">
-        </div>
+    // userName 쿼리 매개변수를 가져와서 h1 태그에 출력하는 부분
+    const userName = getQueryParam('userName');
+    if (userName) {
+        const userNameTitle = document.getElementById('userNameTitle');
+        userNameTitle.textContent = `Welcome, ${userName}!`; // 이름 출력 바꾸기!!!!
+    }
+  </script>
+  <!-- 유럽 전체 지도가 올려져 있는 Container -->
+    <div class = container>
+      <img src="www.jpg" alt="please" usemap="#workmap">
+
+      <!-- 나라별 이미지 선택할 수 있는 영역 -->
+      <map name="workmap">
+          <area shape="circle" coords="337,300,44" alt="England" href="./england.html" onmouseover="showDropdown(event, 'dropdown-container1')" onmouseout="hideDropdown('dropdown-container1')">
+          <area shape="circle" coords="337,450,44" alt="Paris" href="./paris.html">
+          <area shape="circle" coords="650,170,44" alt="Finland" href="./finland.html">
+          <area shape="circle" coords="450,360,44" alt="Germany" href="./germany.html">
+          <area shape="circle" coords="455,500,44" alt="Italy" href="./Italy.html">
+
+      </map>
+
+      <!-- onMouse 이벤트 처리하는 부분(아직 작동 잘 안됨) -->
+      <div id="dropdown-container1" style="display: none;">
+        <img src="england_flag.jpg" alt="ENG" height="100%" width="100%">
+      </div>
     </div>
 
-    <!-- <div id="dropdown-container1">
-      <img src="Ellipse.jpg" alt="영국" height="100%" width="100%">
-    </div> -->
+    <!-- 유럽 지도 아래에 사진 추가하려면 div 태그 사용해서 꾸며야함! 위에 container 양식처럼 -->
+
+
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
