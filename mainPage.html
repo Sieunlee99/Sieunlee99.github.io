@@ -46,25 +46,40 @@
         -webkit-text-fill-color: transparent;
         }
         
+        h3{color:gray;
+          text-align: center;
+          font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-size: large;
+        }
+
     </style>
 </head>
 <body>
-  <h1 id ="userNameTitle" style="text-align: center;"></h1>
+  <div class = title>
+    <br>
+    <br>
+    <h1 id ="userNameTitle" style="text-align: center;"></h1>
 
-  <script>
-    // URL에서 쿼리 매개변수를 가져오는 함수
-    function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
+    <h3> 여행하고 싶은 나라를 선택하세요 </h3>
 
-    // userName 쿼리 매개변수를 가져와서 h1 태그에 출력하는 부분
-    const userName = getQueryParam('userName');
-    if (userName) {
-        const userNameTitle = document.getElementById('userNameTitle');
-        userNameTitle.textContent = `Welcome, ${userName}!`; // 이름 출력 바꾸기!!!!
-    }
-  </script>
+    <script>
+      // URL에서 쿼리 매개변수를 가져오는 함수
+      function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+      }
+
+      // userName 쿼리 매개변수를 가져와서 h1 태그에 출력하는 부분
+      const userName = getQueryParam('userName');
+      if (userName) {
+          const userNameTitle = document.getElementById('userNameTitle');
+          userNameTitle.textContent = `어서오세요, ${userName} 여행자님!`; // 이름 출력 바꾸기!!!!
+      } else{
+        userNameTitle.textContent = 'Welcome!';
+      }
+    </script>
+
+  </div>
   <!-- 유럽 전체 지도가 올려져 있는 Container -->
     <div class = container>
       <img src="www.jpg" alt="please" usemap="#workmap">

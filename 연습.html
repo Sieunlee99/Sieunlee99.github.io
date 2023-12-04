@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: Consolas, monospace;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      div{
+        text-align: center;
+        float: left;
+        padding-left: 10px;
+      }
+
+      
+      /*빅벤*/
+      .jb-a {
+        width: 400px;
+        margin: 0px auto;
+        position: relative
+      }
+      .jb-c {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none;
+      }
+      .jb-a:hover .jb-c {
+        display: block;
+      }
+
+
+      /*런던아이*/
+      .b-a {
+        width: 400px;
+        margin: 0px auto;
+        position: relative
+      }
+      .b-c {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none;
+      }
+      .b-a:hover .b-c {
+        display: block;
+      }
+
+
+      /*런던브릿지*/
+      .ib-a {
+        width: 400px;
+        margin: 0px auto;
+        position: relative
+      }
+      .ib-c {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: none;
+      }
+      .ib-a:hover .ib-c {
+        display: block;
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <div class="BOX1">
+    <div class="jb-a">
+      <img src="big-ben.png" alt="" class="jb-b">
+      <img src="bigtext.png" alt="" class="jb-c">
+    </div>
+
+    <div class="b-a">
+        <img src="eye.png" alt="" class="b-b">
+        <img src="eyetext.png" alt="" class="b-c">
+      </div>
+
+      <div class="ib-a">
+        <img src="bridge.png" alt="" class="ib-b">
+        <img src="bridgetext.png" alt="" class="ib-c">
+      </div>
+    </div>
+  </body>
+</html>
